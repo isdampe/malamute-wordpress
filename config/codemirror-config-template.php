@@ -7,6 +7,6 @@ namespace malamute;
 
 defined('ABSPATH') or exit;
 
-global $codemirror_themes;
+global $codemirror_themes, $codemirror_modes;
 
-//{codemirror_themes}
+//{codemirror_build}

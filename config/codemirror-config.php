@@ -7,199 +7,710 @@ namespace malamute;
 
 defined('ABSPATH') or exit;
 
-global $codemirror_themes;
+global $codemirror_themes, $codemirror_modes;
 
 $codemirror_themes = array(
-	'dracula' => array (
-		'name' => 'dracula',
-		'file' => 'dracula.css'
-	),
-	'paraiso-light' => array (
-		'name' => 'paraiso-light',
-		'file' => 'paraiso-light.css'
-	),
-	'yeti' => array (
-		'name' => 'yeti',
-		'file' => 'yeti.css'
-	),
-	'liquibyte' => array (
-		'name' => 'liquibyte',
-		'file' => 'liquibyte.css'
-	),
-	'panda-syntax' => array (
-		'name' => 'panda-syntax',
-		'file' => 'panda-syntax.css'
-	),
-	'tomorrow-night-bright' => array (
-		'name' => 'tomorrow-night-bright',
-		'file' => 'tomorrow-night-bright.css'
-	),
-	'elegant' => array (
-		'name' => 'elegant',
-		'file' => 'elegant.css'
-	),
-	'paraiso-dark' => array (
-		'name' => 'paraiso-dark',
-		'file' => 'paraiso-dark.css'
-	),
-	'twilight' => array (
-		'name' => 'twilight',
-		'file' => 'twilight.css'
-	),
-	'ambiance' => array (
-		'name' => 'ambiance',
-		'file' => 'ambiance.css'
-	),
-	'cobalt' => array (
-		'name' => 'cobalt',
-		'file' => 'cobalt.css'
-	),
-	'monokai' => array (
-		'name' => 'monokai',
-		'file' => 'monokai.css'
-	),
-	'ambiance-mobile' => array (
-		'name' => 'ambiance-mobile',
-		'file' => 'ambiance-mobile.css'
-	),
-	'tomorrow-night-eighties' => array (
-		'name' => 'tomorrow-night-eighties',
-		'file' => 'tomorrow-night-eighties.css'
-	),
-	'material' => array (
-		'name' => 'material',
-		'file' => 'material.css'
-	),
-	'neat' => array (
-		'name' => 'neat',
-		'file' => 'neat.css'
-	),
-	'night' => array (
-		'name' => 'night',
-		'file' => 'night.css'
-	),
-	'eclipse' => array (
-		'name' => 'eclipse',
-		'file' => 'eclipse.css'
-	),
-	'midnight' => array (
-		'name' => 'midnight',
-		'file' => 'midnight.css'
-	),
-	'the-matrix' => array (
-		'name' => 'the-matrix',
-		'file' => 'the-matrix.css'
-	),
 	'3024-day' => array (
 		'name' => '3024-day',
 		'file' => '3024-day.css'
-	),
-	'railscasts' => array (
-		'name' => 'railscasts',
-		'file' => 'railscasts.css'
-	),
-	'vibrant-ink' => array (
-		'name' => 'vibrant-ink',
-		'file' => 'vibrant-ink.css'
-	),
-	'pastel-on-dark' => array (
-		'name' => 'pastel-on-dark',
-		'file' => 'pastel-on-dark.css'
-	),
-	'neo' => array (
-		'name' => 'neo',
-		'file' => 'neo.css'
-	),
-	'isotope' => array (
-		'name' => 'isotope',
-		'file' => 'isotope.css'
-	),
-	'base16-dark' => array (
-		'name' => 'base16-dark',
-		'file' => 'base16-dark.css'
 	),
 	'3024-night' => array (
 		'name' => '3024-night',
 		'file' => '3024-night.css'
 	),
-	'duotone-dark' => array (
-		'name' => 'duotone-dark',
-		'file' => 'duotone-dark.css'
+	'abcdef' => array (
+		'name' => 'abcdef',
+		'file' => 'abcdef.css'
 	),
-	'colorforth' => array (
-		'name' => 'colorforth',
-		'file' => 'colorforth.css'
+	'ambiance' => array (
+		'name' => 'ambiance',
+		'file' => 'ambiance.css'
 	),
-	'ttcn' => array (
-		'name' => 'ttcn',
-		'file' => 'ttcn.css'
+	'ambiance-mobile' => array (
+		'name' => 'ambiance-mobile',
+		'file' => 'ambiance-mobile.css'
 	),
-	'bespin' => array (
-		'name' => 'bespin',
-		'file' => 'bespin.css'
-	),
-	'hopscotch' => array (
-		'name' => 'hopscotch',
-		'file' => 'hopscotch.css'
-	),
-	'duotone-light' => array (
-		'name' => 'duotone-light',
-		'file' => 'duotone-light.css'
-	),
-	'erlang-dark' => array (
-		'name' => 'erlang-dark',
-		'file' => 'erlang-dark.css'
-	),
-	'rubyblue' => array (
-		'name' => 'rubyblue',
-		'file' => 'rubyblue.css'
-	),
-	'zenburn' => array (
-		'name' => 'zenburn',
-		'file' => 'zenburn.css'
-	),
-	'xq-dark' => array (
-		'name' => 'xq-dark',
-		'file' => 'xq-dark.css'
-	),
-	'solarized' => array (
-		'name' => 'solarized',
-		'file' => 'solarized.css'
-	),
-	'seti' => array (
-		'name' => 'seti',
-		'file' => 'seti.css'
-	),
-	'icecoder' => array (
-		'name' => 'icecoder',
-		'file' => 'icecoder.css'
-	),
-	'xq-light' => array (
-		'name' => 'xq-light',
-		'file' => 'xq-light.css'
-	),
-	'mdn-like' => array (
-		'name' => 'mdn-like',
-		'file' => 'mdn-like.css'
-	),
-	'blackboard' => array (
-		'name' => 'blackboard',
-		'file' => 'blackboard.css'
-	),
-	'mbo' => array (
-		'name' => 'mbo',
-		'file' => 'mbo.css'
-	),
-	'lesser-dark' => array (
-		'name' => 'lesser-dark',
-		'file' => 'lesser-dark.css'
+	'base16-dark' => array (
+		'name' => 'base16-dark',
+		'file' => 'base16-dark.css'
 	),
 	'base16-light' => array (
 		'name' => 'base16-light',
 		'file' => 'base16-light.css'
 	),
-	'abcdef' => array (
-		'name' => 'abcdef',
-		'file' => 'abcdef.css'
+	'bespin' => array (
+		'name' => 'bespin',
+		'file' => 'bespin.css'
+	),
+	'blackboard' => array (
+		'name' => 'blackboard',
+		'file' => 'blackboard.css'
+	),
+	'cobalt' => array (
+		'name' => 'cobalt',
+		'file' => 'cobalt.css'
+	),
+	'colorforth' => array (
+		'name' => 'colorforth',
+		'file' => 'colorforth.css'
+	),
+	'dracula' => array (
+		'name' => 'dracula',
+		'file' => 'dracula.css'
+	),
+	'duotone-dark' => array (
+		'name' => 'duotone-dark',
+		'file' => 'duotone-dark.css'
+	),
+	'duotone-light' => array (
+		'name' => 'duotone-light',
+		'file' => 'duotone-light.css'
+	),
+	'eclipse' => array (
+		'name' => 'eclipse',
+		'file' => 'eclipse.css'
+	),
+	'elegant' => array (
+		'name' => 'elegant',
+		'file' => 'elegant.css'
+	),
+	'erlang-dark' => array (
+		'name' => 'erlang-dark',
+		'file' => 'erlang-dark.css'
+	),
+	'hopscotch' => array (
+		'name' => 'hopscotch',
+		'file' => 'hopscotch.css'
+	),
+	'icecoder' => array (
+		'name' => 'icecoder',
+		'file' => 'icecoder.css'
+	),
+	'isotope' => array (
+		'name' => 'isotope',
+		'file' => 'isotope.css'
+	),
+	'lesser-dark' => array (
+		'name' => 'lesser-dark',
+		'file' => 'lesser-dark.css'
+	),
+	'liquibyte' => array (
+		'name' => 'liquibyte',
+		'file' => 'liquibyte.css'
+	),
+	'material' => array (
+		'name' => 'material',
+		'file' => 'material.css'
+	),
+	'mbo' => array (
+		'name' => 'mbo',
+		'file' => 'mbo.css'
+	),
+	'mdn-like' => array (
+		'name' => 'mdn-like',
+		'file' => 'mdn-like.css'
+	),
+	'midnight' => array (
+		'name' => 'midnight',
+		'file' => 'midnight.css'
+	),
+	'monokai' => array (
+		'name' => 'monokai',
+		'file' => 'monokai.css'
+	),
+	'neat' => array (
+		'name' => 'neat',
+		'file' => 'neat.css'
+	),
+	'neo' => array (
+		'name' => 'neo',
+		'file' => 'neo.css'
+	),
+	'night' => array (
+		'name' => 'night',
+		'file' => 'night.css'
+	),
+	'panda-syntax' => array (
+		'name' => 'panda-syntax',
+		'file' => 'panda-syntax.css'
+	),
+	'paraiso-dark' => array (
+		'name' => 'paraiso-dark',
+		'file' => 'paraiso-dark.css'
+	),
+	'paraiso-light' => array (
+		'name' => 'paraiso-light',
+		'file' => 'paraiso-light.css'
+	),
+	'pastel-on-dark' => array (
+		'name' => 'pastel-on-dark',
+		'file' => 'pastel-on-dark.css'
+	),
+	'railscasts' => array (
+		'name' => 'railscasts',
+		'file' => 'railscasts.css'
+	),
+	'rubyblue' => array (
+		'name' => 'rubyblue',
+		'file' => 'rubyblue.css'
+	),
+	'seti' => array (
+		'name' => 'seti',
+		'file' => 'seti.css'
+	),
+	'solarized' => array (
+		'name' => 'solarized',
+		'file' => 'solarized.css'
+	),
+	'the-matrix' => array (
+		'name' => 'the-matrix',
+		'file' => 'the-matrix.css'
+	),
+	'tomorrow-night-bright' => array (
+		'name' => 'tomorrow-night-bright',
+		'file' => 'tomorrow-night-bright.css'
+	),
+	'tomorrow-night-eighties' => array (
+		'name' => 'tomorrow-night-eighties',
+		'file' => 'tomorrow-night-eighties.css'
+	),
+	'ttcn' => array (
+		'name' => 'ttcn',
+		'file' => 'ttcn.css'
+	),
+	'twilight' => array (
+		'name' => 'twilight',
+		'file' => 'twilight.css'
+	),
+	'vibrant-ink' => array (
+		'name' => 'vibrant-ink',
+		'file' => 'vibrant-ink.css'
+	),
+	'xq-dark' => array (
+		'name' => 'xq-dark',
+		'file' => 'xq-dark.css'
+	),
+	'xq-light' => array (
+		'name' => 'xq-light',
+		'file' => 'xq-light.css'
+	),
+	'yeti' => array (
+		'name' => 'yeti',
+		'file' => 'yeti.css'
+	),
+	'zenburn' => array (
+		'name' => 'zenburn',
+		'file' => 'zenburn.css'
+	)
+);
+
+$codemirror_modes = array(
+	'apl' => array (
+		'name' => 'apl',
+		'file' => 'apl.js'
+	),
+	'asciiarmor' => array (
+		'name' => 'asciiarmor',
+		'file' => 'asciiarmor.js'
+	),
+	'asn.1' => array (
+		'name' => 'asn.1',
+		'file' => 'asn.1.js'
+	),
+	'asterisk' => array (
+		'name' => 'asterisk',
+		'file' => 'asterisk.js'
+	),
+	'brainfuck' => array (
+		'name' => 'brainfuck',
+		'file' => 'brainfuck.js'
+	),
+	'clike' => array (
+		'name' => 'clike',
+		'file' => 'clike.js'
+	),
+	'clojure' => array (
+		'name' => 'clojure',
+		'file' => 'clojure.js'
+	),
+	'cmake' => array (
+		'name' => 'cmake',
+		'file' => 'cmake.js'
+	),
+	'cobol' => array (
+		'name' => 'cobol',
+		'file' => 'cobol.js'
+	),
+	'coffeescript' => array (
+		'name' => 'coffeescript',
+		'file' => 'coffeescript.js'
+	),
+	'commonlisp' => array (
+		'name' => 'commonlisp',
+		'file' => 'commonlisp.js'
+	),
+	'crystal' => array (
+		'name' => 'crystal',
+		'file' => 'crystal.js'
+	),
+	'css' => array (
+		'name' => 'css',
+		'file' => 'css.js'
+	),
+	'cypher' => array (
+		'name' => 'cypher',
+		'file' => 'cypher.js'
+	),
+	'd' => array (
+		'name' => 'd',
+		'file' => 'd.js'
+	),
+	'dart' => array (
+		'name' => 'dart',
+		'file' => 'dart.js'
+	),
+	'diff' => array (
+		'name' => 'diff',
+		'file' => 'diff.js'
+	),
+	'django' => array (
+		'name' => 'django',
+		'file' => 'django.js'
+	),
+	'dockerfile' => array (
+		'name' => 'dockerfile',
+		'file' => 'dockerfile.js'
+	),
+	'dtd' => array (
+		'name' => 'dtd',
+		'file' => 'dtd.js'
+	),
+	'dylan' => array (
+		'name' => 'dylan',
+		'file' => 'dylan.js'
+	),
+	'ebnf' => array (
+		'name' => 'ebnf',
+		'file' => 'ebnf.js'
+	),
+	'ecl' => array (
+		'name' => 'ecl',
+		'file' => 'ecl.js'
+	),
+	'eiffel' => array (
+		'name' => 'eiffel',
+		'file' => 'eiffel.js'
+	),
+	'elm' => array (
+		'name' => 'elm',
+		'file' => 'elm.js'
+	),
+	'erlang' => array (
+		'name' => 'erlang',
+		'file' => 'erlang.js'
+	),
+	'factor' => array (
+		'name' => 'factor',
+		'file' => 'factor.js'
+	),
+	'fcl' => array (
+		'name' => 'fcl',
+		'file' => 'fcl.js'
+	),
+	'forth' => array (
+		'name' => 'forth',
+		'file' => 'forth.js'
+	),
+	'fortran' => array (
+		'name' => 'fortran',
+		'file' => 'fortran.js'
+	),
+	'gas' => array (
+		'name' => 'gas',
+		'file' => 'gas.js'
+	),
+	'gfm' => array (
+		'name' => 'gfm',
+		'file' => 'gfm.js'
+	),
+	'gherkin' => array (
+		'name' => 'gherkin',
+		'file' => 'gherkin.js'
+	),
+	'go' => array (
+		'name' => 'go',
+		'file' => 'go.js'
+	),
+	'groovy' => array (
+		'name' => 'groovy',
+		'file' => 'groovy.js'
+	),
+	'gss_test' => array (
+		'name' => 'gss_test',
+		'file' => 'gss_test.js'
+	),
+	'haml' => array (
+		'name' => 'haml',
+		'file' => 'haml.js'
+	),
+	'handlebars' => array (
+		'name' => 'handlebars',
+		'file' => 'handlebars.js'
+	),
+	'haskell' => array (
+		'name' => 'haskell',
+		'file' => 'haskell.js'
+	),
+	'haskell-literate' => array (
+		'name' => 'haskell-literate',
+		'file' => 'haskell-literate.js'
+	),
+	'haxe' => array (
+		'name' => 'haxe',
+		'file' => 'haxe.js'
+	),
+	'htmlembedded' => array (
+		'name' => 'htmlembedded',
+		'file' => 'htmlembedded.js'
+	),
+	'htmlmixed' => array (
+		'name' => 'htmlmixed',
+		'file' => 'htmlmixed.js'
+	),
+	'http' => array (
+		'name' => 'http',
+		'file' => 'http.js'
+	),
+	'idl' => array (
+		'name' => 'idl',
+		'file' => 'idl.js'
+	),
+	'javascript' => array (
+		'name' => 'javascript',
+		'file' => 'javascript.js'
+	),
+	'jinja2' => array (
+		'name' => 'jinja2',
+		'file' => 'jinja2.js'
+	),
+	'jsx' => array (
+		'name' => 'jsx',
+		'file' => 'jsx.js'
+	),
+	'julia' => array (
+		'name' => 'julia',
+		'file' => 'julia.js'
+	),
+	'less_test' => array (
+		'name' => 'less_test',
+		'file' => 'less_test.js'
+	),
+	'livescript' => array (
+		'name' => 'livescript',
+		'file' => 'livescript.js'
+	),
+	'lua' => array (
+		'name' => 'lua',
+		'file' => 'lua.js'
+	),
+	'markdown' => array (
+		'name' => 'markdown',
+		'file' => 'markdown.js'
+	),
+	'mathematica' => array (
+		'name' => 'mathematica',
+		'file' => 'mathematica.js'
+	),
+	'mbox' => array (
+		'name' => 'mbox',
+		'file' => 'mbox.js'
+	),
+	'meta' => array (
+		'name' => 'meta',
+		'file' => 'meta.js'
+	),
+	'mirc' => array (
+		'name' => 'mirc',
+		'file' => 'mirc.js'
+	),
+	'mllike' => array (
+		'name' => 'mllike',
+		'file' => 'mllike.js'
+	),
+	'modelica' => array (
+		'name' => 'modelica',
+		'file' => 'modelica.js'
+	),
+	'mscgen' => array (
+		'name' => 'mscgen',
+		'file' => 'mscgen.js'
+	),
+	'mscgen_test' => array (
+		'name' => 'mscgen_test',
+		'file' => 'mscgen_test.js'
+	),
+	'msgenny_test' => array (
+		'name' => 'msgenny_test',
+		'file' => 'msgenny_test.js'
+	),
+	'mumps' => array (
+		'name' => 'mumps',
+		'file' => 'mumps.js'
+	),
+	'nginx' => array (
+		'name' => 'nginx',
+		'file' => 'nginx.js'
+	),
+	'nsis' => array (
+		'name' => 'nsis',
+		'file' => 'nsis.js'
+	),
+	'ntriples' => array (
+		'name' => 'ntriples',
+		'file' => 'ntriples.js'
+	),
+	'octave' => array (
+		'name' => 'octave',
+		'file' => 'octave.js'
+	),
+	'oz' => array (
+		'name' => 'oz',
+		'file' => 'oz.js'
+	),
+	'pascal' => array (
+		'name' => 'pascal',
+		'file' => 'pascal.js'
+	),
+	'pegjs' => array (
+		'name' => 'pegjs',
+		'file' => 'pegjs.js'
+	),
+	'perl' => array (
+		'name' => 'perl',
+		'file' => 'perl.js'
+	),
+	'php' => array (
+		'name' => 'php',
+		'file' => 'php.js'
+	),
+	'pig' => array (
+		'name' => 'pig',
+		'file' => 'pig.js'
+	),
+	'powershell' => array (
+		'name' => 'powershell',
+		'file' => 'powershell.js'
+	),
+	'properties' => array (
+		'name' => 'properties',
+		'file' => 'properties.js'
+	),
+	'protobuf' => array (
+		'name' => 'protobuf',
+		'file' => 'protobuf.js'
+	),
+	'pug' => array (
+		'name' => 'pug',
+		'file' => 'pug.js'
+	),
+	'puppet' => array (
+		'name' => 'puppet',
+		'file' => 'puppet.js'
+	),
+	'python' => array (
+		'name' => 'python',
+		'file' => 'python.js'
+	),
+	'q' => array (
+		'name' => 'q',
+		'file' => 'q.js'
+	),
+	'r' => array (
+		'name' => 'r',
+		'file' => 'r.js'
+	),
+	'rpm' => array (
+		'name' => 'rpm',
+		'file' => 'rpm.js'
+	),
+	'rst' => array (
+		'name' => 'rst',
+		'file' => 'rst.js'
+	),
+	'ruby' => array (
+		'name' => 'ruby',
+		'file' => 'ruby.js'
+	),
+	'rust' => array (
+		'name' => 'rust',
+		'file' => 'rust.js'
+	),
+	'sas' => array (
+		'name' => 'sas',
+		'file' => 'sas.js'
+	),
+	'sass' => array (
+		'name' => 'sass',
+		'file' => 'sass.js'
+	),
+	'scheme' => array (
+		'name' => 'scheme',
+		'file' => 'scheme.js'
+	),
+	'scss_test' => array (
+		'name' => 'scss_test',
+		'file' => 'scss_test.js'
+	),
+	'shell' => array (
+		'name' => 'shell',
+		'file' => 'shell.js'
+	),
+	'sieve' => array (
+		'name' => 'sieve',
+		'file' => 'sieve.js'
+	),
+	'slim' => array (
+		'name' => 'slim',
+		'file' => 'slim.js'
+	),
+	'smalltalk' => array (
+		'name' => 'smalltalk',
+		'file' => 'smalltalk.js'
+	),
+	'smarty' => array (
+		'name' => 'smarty',
+		'file' => 'smarty.js'
+	),
+	'solr' => array (
+		'name' => 'solr',
+		'file' => 'solr.js'
+	),
+	'soy' => array (
+		'name' => 'soy',
+		'file' => 'soy.js'
+	),
+	'sparql' => array (
+		'name' => 'sparql',
+		'file' => 'sparql.js'
+	),
+	'spreadsheet' => array (
+		'name' => 'spreadsheet',
+		'file' => 'spreadsheet.js'
+	),
+	'sql' => array (
+		'name' => 'sql',
+		'file' => 'sql.js'
+	),
+	'stex' => array (
+		'name' => 'stex',
+		'file' => 'stex.js'
+	),
+	'stylus' => array (
+		'name' => 'stylus',
+		'file' => 'stylus.js'
+	),
+	'swift' => array (
+		'name' => 'swift',
+		'file' => 'swift.js'
+	),
+	'tcl' => array (
+		'name' => 'tcl',
+		'file' => 'tcl.js'
+	),
+	'textile' => array (
+		'name' => 'textile',
+		'file' => 'textile.js'
+	),
+	'tiddlywiki' => array (
+		'name' => 'tiddlywiki',
+		'file' => 'tiddlywiki.js'
+	),
+	'tiki' => array (
+		'name' => 'tiki',
+		'file' => 'tiki.js'
+	),
+	'toml' => array (
+		'name' => 'toml',
+		'file' => 'toml.js'
+	),
+	'tornado' => array (
+		'name' => 'tornado',
+		'file' => 'tornado.js'
+	),
+	'troff' => array (
+		'name' => 'troff',
+		'file' => 'troff.js'
+	),
+	'ttcn' => array (
+		'name' => 'ttcn',
+		'file' => 'ttcn.js'
+	),
+	'ttcn-cfg' => array (
+		'name' => 'ttcn-cfg',
+		'file' => 'ttcn-cfg.js'
+	),
+	'turtle' => array (
+		'name' => 'turtle',
+		'file' => 'turtle.js'
+	),
+	'twig' => array (
+		'name' => 'twig',
+		'file' => 'twig.js'
+	),
+	'vb' => array (
+		'name' => 'vb',
+		'file' => 'vb.js'
+	),
+	'vbscript' => array (
+		'name' => 'vbscript',
+		'file' => 'vbscript.js'
+	),
+	'velocity' => array (
+		'name' => 'velocity',
+		'file' => 'velocity.js'
+	),
+	'verilog' => array (
+		'name' => 'verilog',
+		'file' => 'verilog.js'
+	),
+	'vhdl' => array (
+		'name' => 'vhdl',
+		'file' => 'vhdl.js'
+	),
+	'vue' => array (
+		'name' => 'vue',
+		'file' => 'vue.js'
+	),
+	'webidl' => array (
+		'name' => 'webidl',
+		'file' => 'webidl.js'
+	),
+	'xml' => array (
+		'name' => 'xml',
+		'file' => 'xml.js'
+	),
+	'xquery' => array (
+		'name' => 'xquery',
+		'file' => 'xquery.js'
+	),
+	'xu_test' => array (
+		'name' => 'xu_test',
+		'file' => 'xu_test.js'
+	),
+	'yacas' => array (
+		'name' => 'yacas',
+		'file' => 'yacas.js'
+	),
+	'yaml' => array (
+		'name' => 'yaml',
+		'file' => 'yaml.js'
+	),
+	'yaml-frontmatter' => array (
+		'name' => 'yaml-frontmatter',
+		'file' => 'yaml-frontmatter.js'
+	),
+	'z80' => array (
+		'name' => 'z80',
+		'file' => 'z80.js'
 	)
 );

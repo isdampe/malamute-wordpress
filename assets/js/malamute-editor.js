@@ -2,10 +2,10 @@
 
 	this.wpEditor = null;
 
-	var mde = this;
+	var mlm = this;
 	var CodeMirror = window.CodeMirror;
 	var $ = window.jQuery;
-	window.markdownEditor = this;
+	window.malamuteEditor = this;
 	
 
 	/**
@@ -13,18 +13,18 @@
 	 * Sets up CodeMirror on the Wordpress editor textarea
 	 * @return {void}
 	 */
-	mde.init = function() {
-		mde.wpEditor = document.getElementById('content');
-		if (! mde.wpEditor ) return;
-		mde.setupCodeMirror();
+	mlm.init = function() {
+		mlm.wpEditor = document.getElementById('content');
+		if (! mlm.wpEditor ) return;
+		mlm.setupCodeMirror();
 	}
 
 	/**
 	 * Attachs a new CodeMirror instance to the Wordpress editor
 	 * @return {void}
 	 */
-	mde.setupCodeMirror = function() {
-		mde.CodeMirror = CodeMirror.fromTextArea(mde.wpEditor, {
+	mlm.setupCodeMirror = function() {
+		mlm.CodeMirror = CodeMirror.fromTextArea(mlm.wpEditor, {
 		 	value: this.wpEditor.value,
 			mode:  "gfm",
 		 	viewportMargin: Infinity,
@@ -34,7 +34,7 @@
 	}
 
 	$(document).ready(function(){
-		mde.init();	
+		mlm.init();	
 	});
 	
 
