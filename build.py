@@ -28,6 +28,8 @@ for (dirpath, dirnames, filenames) in os.walk('assets/vendor/cm/mode'):
 	dirnames.sort()
 	filenames.sort()
 	for file in filenames:
+		if file[-8:] == "_test.js":
+			continue
 		if file[-3:] == ".js":
 			if file in codeMirrorModesFileBlacklist:
 				continue

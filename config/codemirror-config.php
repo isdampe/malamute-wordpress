@@ -345,10 +345,6 @@ $codemirror_modes = array(
 		'name' => 'groovy',
 		'file' => 'groovy.js'
 	),
-	'gss_test' => array (
-		'name' => 'gss_test',
-		'file' => 'gss_test.js'
-	),
 	'haml' => array (
 		'name' => 'haml',
 		'file' => 'haml.js'
@@ -401,10 +397,6 @@ $codemirror_modes = array(
 		'name' => 'julia',
 		'file' => 'julia.js'
 	),
-	'less_test' => array (
-		'name' => 'less_test',
-		'file' => 'less_test.js'
-	),
 	'livescript' => array (
 		'name' => 'livescript',
 		'file' => 'livescript.js'
@@ -444,14 +436,6 @@ $codemirror_modes = array(
 	'mscgen' => array (
 		'name' => 'mscgen',
 		'file' => 'mscgen.js'
-	),
-	'mscgen_test' => array (
-		'name' => 'mscgen_test',
-		'file' => 'mscgen_test.js'
-	),
-	'msgenny_test' => array (
-		'name' => 'msgenny_test',
-		'file' => 'msgenny_test.js'
 	),
 	'mumps' => array (
 		'name' => 'mumps',
@@ -556,10 +540,6 @@ $codemirror_modes = array(
 	'scheme' => array (
 		'name' => 'scheme',
 		'file' => 'scheme.js'
-	),
-	'scss_test' => array (
-		'name' => 'scss_test',
-		'file' => 'scss_test.js'
 	),
 	'shell' => array (
 		'name' => 'shell',
@@ -692,10 +672,6 @@ $codemirror_modes = array(
 	'xquery' => array (
 		'name' => 'xquery',
 		'file' => 'xquery.js'
-	),
-	'xu_test' => array (
-		'name' => 'xu_test',
-		'file' => 'xu_test.js'
 	),
 	'yacas' => array (
 		'name' => 'yacas',

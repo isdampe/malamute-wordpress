@@ -12,6 +12,7 @@
 */
 
 define('MALAMUTE_VERSION',						'0.1.0');
+define('MALAMUTE_PLUGIN_BASEURL',			 	plugin_dir_url(__FILE__));
 
 include 'config/codemirror-config.php';
 include 'lib/hook.php';

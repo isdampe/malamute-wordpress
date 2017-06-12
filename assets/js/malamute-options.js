@@ -55,6 +55,50 @@
 		console.log(activeModes);
 
 	};
+
+	mo.checkAllBoxes = function(e) {
+
+		var selected, unselected;
+		selected = $('[data-hook=malamute-set-codemirror-mode]:checked').length;
+		unselected = $('[data-hook=malamute-set-codemirror-mode]:not(:checked)').length;
+
+		var direction = ( selected > unselected ? "uncheck" : "check" );
+
+		$('[data-hook=malamute-set-codemirror-mode]').each(function(){
+			if ( direction === "uncheck" ) {
+				$(this).prop('checked', false);
+			} else {
+				$(this).prop('checked', true);
+			}
+		});
+		$('[data-hook=malamute-set-codemirror-mode]').trigger('change');
+
+	};
+
+	/**
+	 * Pre-loads and pre-ticks options if they exist
+	 * @return {void}
+	 */
+	mo.preload = function() {
+
+		var args = $('#malamute-codemirror_active_modes').val()
+		if ( args ) {
+			try {
+				var j = JSON.parse(args);
+				activeModes = j;
+
+				for ( key in activeModes ) {
+					if ( activeModes.hasOwnProperty(key) ) {
+						$('#' + key).prop('checked', true);
+					}
+				}
+
+			} catch(e) {
+
+			}
+		}
+
+	};
 	
 	/**
 	 * Hooks relevant elements
@@ -62,7 +106,9 @@
 	 */
 	mo.init = function() {
 
+		mo.preload();
 		$('[data-hook=malamute-set-codemirror-mode]').off('change').on('change', mo.hndModeCheckbox);
+		$('#malamute-check-all').off('change').on('change', mo.checkAllBoxes);
 
 	};
 

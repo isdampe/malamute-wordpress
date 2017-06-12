@@ -47,3 +47,30 @@ function codemirror_get_modes() {
 	global $codemirror_modes;
 	return $codemirror_modes;
 }
+
+/**
+ * Checks to see if a mode exists
+ * @param {string} $mode_name - The name of the mode
+ * @return {bool} - True if the mode exits, otherwise false
+ */
+function codemirror_mode_exists($mode_name) {
+	global $codemirror_modes;
+
+	if ( array_key_exists($mode_name, $codemirror_modes) ) {
+		return true;
+	}
+	return false;
+}
+
+/**
+ * Gets a codemirror mode by name
+ * @param {string} $theme_name - The name of the mode to fetch
+ * @return {array} - The array containing the codemirror mode information
+ */
+function codemirror_get_mode_by_name($mode_name) {
+	global $codemirror_modes;
+	if ( array_key_exists($mode_name, $codemirror_modes) ) {
+		return $codemirror_modes[$mode_name];
+	}
+	return false;
+}

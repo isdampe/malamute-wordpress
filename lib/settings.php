@@ -104,7 +104,9 @@ function render_settings_page() {
 
 	$mode_options = '<div style="padding-top: 15px;">';
 	$codemirror_modes = codemirror_get_modes();
+	$ignore_modes = array('markdown', 'gfm', 'htmlembedded', 'htmlmixed', 'xml');
 	foreach ( $codemirror_modes as $mode ) {
+		if ( in_array($mode['name'], $ignore_modes) ) continue;
 		$checked = "";
 		$mode_options .= sprintf('<div style="margin-bottom: 10px; float: left; width: 180px;"><label for="%s"><input data-hook="malamute-set-codemirror-mode" type="checkbox" name="%s" id="%s" %s /> %s</label></div>',
 							$mode['name'],
@@ -116,35 +118,34 @@ function render_settings_page() {
 	}
 	$mode_options .= '</div>';
 
-	$buffer = sprintf('
+	?>
 	<div class="wrap">
 		<h1>Malamute Settings</h1>
 		<form method="post" action="options.php">
 
-			<input type="hidden" name="option_page" value="malamute-settings-group" />
-			<input type="hidden" name="action" value="update" />
-			%s
-			<input type="hidden" id="malamute-codemirror_active_modes" name="malamute-codemirror_active_modes" />
+			<?php settings_fields( 'malamute-settings-group' ); ?>
+    		<?php do_settings_sections( 'malamute-settings-group' ); ?>
+
+			<input type="hidden" id="malamute-codemirror_active_modes" name="malamute-codemirror_active_modes" value="<?php echo esc_attr( get_option('malamute-codemirror_active_modes') ); ?>" />
 
 			<table class="form-table">
 				<tbody>
 					<tr valign="top">
 						<th scope="row">Enabled CodeMirror modes</th>
 						<td style="padding-top: 25px;">
-							<div style="margin-bottom: 15px;"><input id="malamute-check-all" type="checkbox" /> Select all</div>
+							<div style="margin-bottom: 15px;"><label><input id="malamute-check-all" type="checkbox" /> Select all</label></div>
 							<hr>
-							%s
+							<?php echo $mode_options; ?>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 
-			<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"  /></p>
+			<?php submit_button(); ?>
 
 		</form>
-	</div>', wp_nonce_field('malamute-settings-group', '_wpnonce', true, false), $mode_options);
-
-	echo $buffer;
+	</div>
+	<?php 
 
 }
 
@@ -156,8 +157,42 @@ function render_settings_page() {
 function enqueue_options_script($hook) {
 
 	if ( $hook == 'settings_page_malamute-options' ) {
-		wp_enqueue_script('malamute-js-options', plugins_url('malamute/assets/js/malamute-options.js'));
+		wp_enqueue_script('malamute-js-options', sprintf('%sassets/js/malamute-options.js', MALAMUTE_PLUGIN_BASEURL));
 	}
 
 }
 add_action('admin_enqueue_scripts', '\malamute\enqueue_options_script');
+
+/**
+ * Returns the current settings for active CodeMirror modes
+ * @return {array} - The array of active CodeMirror modes
+ */
+function settings_get_active_codemirror_modes() {
+
+	$json = array();
+	$raw = get_option('malamute-codemirror_active_modes');
+
+	if ( $raw ) {
+		try {
+			$json = json_decode($raw, true);
+		} catch(Exception $e) {
+		}
+	}
+
+	$modes = array();
+	foreach ( $json as $key => $val ) {
+		if ( codemirror_mode_exists($key) ) {
+			$modes[] = $key;
+		}
+	}
+
+	//Default modes always on.
+	$modes[] = 'markdown';
+	$modes[] = 'gfm';
+	$modes[] = 'htmlmixed';
+	$modes[] = 'htmlembedded';
+	$modes[] = 'xml';
+
+	return $modes;
+
+}
