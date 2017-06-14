@@ -78,6 +78,10 @@ $codemirror_themes = array(
 		'name' => 'erlang-dark',
 		'file' => 'erlang-dark.css'
 	),
+	'github' => array (
+		'name' => 'github',
+		'file' => 'github.css'
+	),
 	'hopscotch' => array (
 		'name' => 'hopscotch',
 		'file' => 'hopscotch.css'
